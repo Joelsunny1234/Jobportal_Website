@@ -1,0 +1,251 @@
+ 
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body
+{
+display: flex;
+justify-content: right;
+align-items: center;
+min-height: 100vh;
+background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+padding: 10px;
+}
+
+.box{
+position: relative;
+width: 345px;
+height: 448px;
+background: #00024C;
+border-radius: 17px;
+overflow: hidden;
+right: 55px;
+top: 5px;
+}
+/* .box::before{
+content:'';
+position:absolute;
+top: -50%;
+left:-50%;
+width:380px;
+height: 370px;
+background: linear-gradient(0deg,transparent,transparent
+,#45f3ff,#45f3ff,#45f3ff);
+z-index:1;
+animation:animate 6s linear infinite;
+transform-origin: bottom right;
+
+
+}
+.box::after{
+content:'';
+position:absolute;
+top: -50%;
+left:-50%;
+width:380px;
+height: 370px;
+background: linear-gradient(0deg,transparent,transparent
+,#45f3ff,#45f3ff,#45f3ff);
+z-index:1;
+animation:animate 6s linear infinite;
+transform-origin: bottom right;
+animation-delay:-3s;
+} */
+/* .borderLine
+{
+position:absolute;
+top:0;
+inset:0;
+
+}
+.borderLine::before{
+content:'';
+position:absolute;
+top: -50%;
+left:-50%;
+width:380px;
+height: 370px;
+background: linear-gradient(0deg,transparent,transparent
+,#e8e1e5,#e8e1e5,#e8e1e5);
+z-index:1;
+animation:animate 6s linear infinite;
+transform-origin: bottom right;
+animation-delay:-1.5s;
+}
+.borderLine::after{
+content:'';
+position:absolute;
+top: -50%;
+left:-50%;
+width:380px;
+height: 370px;
+background: linear-gradient(0deg,transparent,transparent
+,#e8e1e5,#e8e1e5,#e8e1e5);
+z-index:1;
+animation:animate 6s linear infinite;
+transform-origin: bottom right;
+animation-delay:1.5s;
+}
+@keyframes animate
+{
+0%
+{
+    transform: rotate(0deg);
+}
+100%
+{
+    transform: rotate(360deg);
+}
+} */
+.box form {
+position: absolute;
+background: #ffffff;
+inset: 6px;
+border-radius: 10px;
+padding: 40px 40px;
+z-index: 2;
+display: flex;
+flex-direction: column;
+}
+.box form h1{
+color:rgb(10, 16, 28);
+font-size:1.7em;
+text-align:center;
+letter-spacing: 0.03em;
+
+}
+.box form .inputbox
+{
+position:relative;
+width:100%;
+margin-top:35px;
+
+}
+.box form .inputbox input
+{
+position:relative;
+width:100%;
+padding: 20px 0px 10px;
+background: transparent;
+outline:none;
+border:none;
+box-shadow:none;
+color:rgb(8, 7, 7);
+font-size: 1em;
+letter-spacing: 0.05em;
+transition:.5s;
+z-index:10;
+}
+.box form .inputbox span
+{
+position: absolute;
+left: 0px;
+padding: 20px 0px 10px;
+pointer-events: none;
+color: rgb(0, 0, 0);
+font-size: 1.1em;
+letter-spacing: 0.04em;
+transition: all 0.5s ease 0s;
+
+
+}
+.box form .inputbox input:valid ~ span,
+.box form .inputbox input:focus ~ span
+{
+color:rgb(0, 0, 0);
+font-size:0.80em;
+transform:translateY(-34px);
+
+
+}
+.box form .inputbox p
+{
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:2px;
+background:rgb(39, 80, 99);
+border-radius:4px;
+overflow:hidden;
+transition:0.5s;
+pointer-events:none;
+
+}
+.box form .inputbox input:valid ~ p,
+.box form .inputbox input:focus ~ p
+{
+height: 2px;
+}
+
+.box form .inputbox #togglepassword {
+position: absolute;
+
+right: 9px;
+top: 17px;
+z-index: 1; /* Ensure it's above other elements */
+} 
+
+
+
+.box form .links
+{
+display:flex;
+justify-content: space-between;
+}
+.box form .links a
+{
+margin:10px 0;
+font-size:0.8em;
+color:#211c5c;
+text-decoration: none;
+
+
+}
+.box form .links a:hover,
+.box form .links a:nth-child(2)
+{
+color:#68799b;
+
+}
+.box form  input[type="submit"]
+{
+border: none;
+outline: none;
+padding: 9px 25px;
+background: #00023c;
+border-radius: 4px;
+margin-top: 8px;
+color: white;
+font-size: 0.9em;
+font-weight: 600;
+cursor: pointer;
+}
+.box form  input[type="submit"]:active
+{
+opacity:0.8;
+}
+.box form .acc
+{
+display: flex;
+justify-content: flex-start;
+padding-top: 17px;
+
+}
+.box form .acc p{
+text-decoration: none;
+padding-top:5px;
+font-size: .75em;
+}
+.box form .acc a{
+text-decoration: none;
+padding-top:5px;
+font-size: .75em;
+}
+.box form .acc a:hover
+{
+color:#68799b;
+}
