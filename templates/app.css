@@ -1,57 +1,110 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Styling */
+body, html {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #212529;
+    overflow: hidden; /* Disable scrolling */
+    height: 100%; /* Fill the viewport */
+}
+
+h1, p {
+    margin: 0;
 }
 
 h1 {
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 700;
+    color: #333;
 }
 
-.search-bar input,
-.search-bar select {
-    margin-bottom: 10px;
-    display: inline-block;
-    vertical-align: middle;
+p {
+    font-size: 1.2rem;
+    color: #6c757d;
 }
 
-.navbar a {
-    color: #000;
-    font-weight: bold;
+a {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover {
-    color: #007bff;
-    position:right;
-
+a:hover {
+    color: #0056b3;
 }
 
-.container-fluid {
+/* Navbar */
+nav {
+    height: 80px; /* Fixed height */
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-img {
-    max-width: 100%;
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Hero Section */
+.row {
+    margin: 0;
+    padding: 0 20px;
+    height: calc(100vh - 60px); /* Fill the remaining height */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space between columns */
+}
+
+.col-md-6 img {
+    max-width: 60%; /* Ensure it fits container */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 8px;
-}
-.pushpa{
-    width:350px;
-    height:350px;
-}
-.logo
-{
- 
-        width:350px;
-        height:350px;
-        position:absolute;
-        left:350px;
-    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
 }
 
-.justify-content-end{
-    width: 100%;
-    align-content: left;
+/* Typography Adjustments */
+.display-4 {
+    font-size: 3rem;
+}
+
+.fs-5 {
+    font-size: 1.125rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        height: calc(100vh - 80px); /* Adjust for smaller screens */
+    }
+
+    .logo img {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .col-md-6 img {
+        max-width: 90%;
+    }
 }
