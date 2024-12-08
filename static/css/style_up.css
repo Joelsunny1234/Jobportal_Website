@@ -8,7 +8,7 @@
 body
 {
 display: flex;
-justify-content: right;
+justify-content: center;
 align-items: center;
 min-height: 100vh;
 background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
@@ -22,8 +22,8 @@ height: 448px;
 background: #00024C;
 border-radius: 17px;
 overflow: hidden;
-right: 55px;
-top: 5px;
+/* right: 55px;
+top: 5px; */
 }
 /* .box::before{
 content:'';
