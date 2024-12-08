@@ -12,25 +12,27 @@
 <body>
     <div class="box">
         <span class="borderLine"></span>
-        <form>
+        <form method="POST" action="/login">
             <!-- <a href="https://storyset.com/people"></a> -->
     
            <h1>Sign in</h1>
            <div class="inputbox">
-                <input type="text" required="required" >
-                <span>Username</span>
+                <label>Username</label>
+                <input type="text" name="username" required="required" placeholder="Enter username">
+                <!-- <span>Username</span> -->
                 <p></p>
            </div>
            <div class="inputbox">
-                <input type="password"  required="required">
+                <label>Password</label>
+                <input type="password" name="password" required="required" placeholder="Enter password">
                 <p></p>
                 <!-- <i id="togglepassword" class="fa fa-eye password-icon"></i> -->
-                <span>Password</span>
+                <!-- <span>Password</span> -->
                
            </div>
-           <div class="links">
+           <!-- <div class="links">
                 <a href ="#">Forgot password</a>
-           </div>
+           </div> -->
            <input type="submit" value="Log in">
            <div class="acc">
            <p>Don't have an account yet?&nbsp;&nbsp;</p>
@@ -39,14 +41,14 @@
         </form>
 
     </div>
-    <div class="ph">
-        <img src="stock.png" width="400" height="400">
+    <!-- <div class="ph">
+        <img src="{{ url_for('static', filename='images/stock.png')}}" width="400" height="400">
     </div>
             
 
         <div class="caption">
             <p>Keep your day-to-day transactions with us</p>
-        </div>  
+        </div>   -->
         <!-- <img src="Group.png">      -->
 
 </body>

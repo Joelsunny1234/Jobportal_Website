@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
+    <title>Sign Up page</title>
     <link rel="stylesheet"href="{{ url_for('static', filename='css/style_up.css') }}">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet"href="{{ url_for('static', filename='css/pic.css') }}">
@@ -12,20 +12,22 @@
 <body>
     <div class="box">
         <span class="borderLine"></span>
-        <form>
+        <form method="POST" action="/signup">
             <!-- <a href="https://storyset.com/people"></a> -->
            <h1>Create an account</h1>
            <div class="inputbox">
-                <input type="text" required="required" >
-                <span>Username</span>
+                <label>Username</label>
+                <input type="text" name="username" required="required" placeholder="Enter username">
+                <!-- <span>Username</span> -->
                 <p></p>
            </div>
            <div class="inputbox">
-                <input type="password"  required="required">
+                <label>Password</label>
+                <input type="password" name="password" required="required" placeholder="Enter password">
                 <p></p>
                 <!-- <i id="togglepassword" class="fa fa-eye password-icon"></i> -->
-                <span>Password</span>
-                <div class="inputbox">
+                <!-- <span>Password</span> -->
+                <!-- <div class="inputbox">
                     <input type="text" required="required" >
                     <span>Username</span>
                     <p></p>
@@ -33,10 +35,10 @@
                <div class="inputbox">
                 <input type="text" required="required" >
                 <span>Username</span>
-                <p></p>
+                <p></p> -->
            </div>
-               
-           </div>
+           
+           <input type="submit" value="Sign up">
            <!-- <div class="links">
                 <a href ="#">Forgot password</a>
            </div>
