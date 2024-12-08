@@ -112,12 +112,16 @@ def jobs():
             db.session.add(new_job)
             db.session.commit()
             flash('Job posted successfully!')
-            return redirect(url_for('jobs'))
-        jobs_posted = Job.query.filter_by(recruiter_id=current_user.id).all()
-        return render_template('recruiter_jobs.html', jobs=jobs_posted)
+            return redirect(url_for('jobs'))  # After posting, redirect to the same jobs page to show the updated job list
+        
+        # If GET request, show the job posting form
+        return render_template('recruiter_post.html')
+
     else:
         available_jobs = Job.query.all()
         return render_template('job_seeker_jobs.html', jobs=available_jobs)
+
+        
 
 @app.route('/apply/<int:job_id>', methods=['GET', 'POST'])
 @login_required

@@ -1,0 +1,143 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Container for the entire page */
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form input fields */
+.inputbox {
+    margin-bottom: 15px;
+}
+
+.inputbox label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.inputbox input,
+.inputbox textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.inputbox input:focus,
+.inputbox textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Job listings styling */
+hr {
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+ul li h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+ul li p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+ul li .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: white;
+    background-color: #28a745;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+ul li .btn:hover {
+    background-color: #218838;
+}
+
+ul li .btn.delete {
+    background-color: #dc3545;
+}
+
+ul li .btn.delete:hover {
+    background-color: #c82333;
+}
+
+/* Empty message when no jobs are posted */
+ul li p {
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+    font-style: italic;
+}
+
