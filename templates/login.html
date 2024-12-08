@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
-    <link rel="stylesheet"href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet"href="{{ url_for('static', filename='css/pic.css') }}">
+{% extends "base.html" %}
 
-</head>
-<body>
-    <div class="box">
+{% block content %}
+
+<div class="login">
+    <div class="login-box">
         <span class="borderLine"></span>
         <form method="POST" action="/login">
             <!-- <a href="https://storyset.com/people"></a> -->
@@ -41,15 +34,6 @@
         </form>
 
     </div>
-    <!-- <div class="ph">
-        <img src="{{ url_for('static', filename='images/stock.png')}}" width="400" height="400">
-    </div>
-            
+</div>
 
-        <div class="caption">
-            <p>Keep your day-to-day transactions with us</p>
-        </div>   -->
-        <!-- <img src="Group.png">      -->
-
-</body>
-</html>
+{% endblock %}
