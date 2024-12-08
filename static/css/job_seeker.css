@@ -1,0 +1,129 @@
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Profile Information Section */
+.profile-info {
+    margin-bottom: 40px;
+}
+
+.profile-info p {
+    margin-bottom: 8px;
+}
+
+/* Applied Jobs Section */
+.applied-jobs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.applied-jobs li {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 20px;
+}
+
+.applied-jobs li h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.applied-jobs li p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.applied-jobs a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.applied-jobs a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Log Out Button */
+a.btn {
+    margin-top: 20px;
+    background-color: #dc3545;
+}
+
+a.btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .applied-jobs li {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/job_seeker.css') }}">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Welcome, {{ current_user.username }} (Job Seeker)</h1>
+        
+        <!-- Display job seeker info -->
+        <div class="profile-info">
+            <p>Email: {{ current_user.email }}</p>
+            <p>Account Type: Job Seeker</p>
+        </div>
+
+        <!-- List of job applications -->
+        <div class="applications">
+            <h2>Jobs You've Applied For</h2>
+            <ul>
+                {% for application in current_user.applications %}
+                    <li>
+                        <h3>{{ application.job.title }}</h3>
+                        <p>{{ application.cover_letter }}</p>
+                        <p>Status: {{ application.status }}</p> <!-- You can add status like "Pending", "Accepted", etc. -->
+                    </li>
+                {% else %}
+                    <p>You haven't applied for any jobs yet.</p>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Log Out -->
+        <a href="{{ url_for('logout') }}" class="btn">Log Out</a>
+    </div>
+</body>
+</html>
