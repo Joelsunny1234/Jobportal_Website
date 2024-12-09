@@ -173,7 +173,8 @@ def recruiter_profile():
 @login_required
 def display():
     jobs=Job.query.all()
-    return render_template('job_seeker_job.html',jobs=jobs)
+    return render_template('job_seeker_jobs.html',jobs=jobs)
+
 @app.route('/delete/<int:id>')
 @login_required
 def delete(id):

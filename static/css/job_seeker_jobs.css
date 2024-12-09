@@ -1,3 +1,4 @@
+
 /* General Page Styles */
 body {
     font-family: 'Arial', sans-serif;
@@ -6,7 +7,7 @@ body {
     padding: 0;
 }
 
-.profile-container {
+.container {
     width: 80%;
     margin: 50px auto;
     background-color: #fff;
@@ -19,54 +20,40 @@ h1 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-h2 {
-    font-size: 1.8rem;
-    color: #444;
-    margin-bottom: 15px;
+/* Job List Styles */
+.job-list {
+    margin-top: 30px;
 }
 
-p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-/* Profile Information Section */
-.profile-info {
-    margin-bottom: 40px;
-}
-
-.profile-info p {
-    margin-bottom: 8px;
-}
-
-/* Jobs Section */
-.jobs ul {
+.job-list ul {
     list-style-type: none;
     padding: 0;
 }
 
-.jobs li {
+.job-item {
     padding: 15px;
-    border-bottom: 1px solid #eaeaea;
+    border: 1px solid #eaeaea;
     margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
-.jobs li h3 {
-    font-size: 1.5rem;
+.job-item h3 {
+    font-size: 1.8rem;
     color: #333;
-    margin-bottom: 8px;
-}
-
-.jobs li p {
-    font-size: 1rem;
-    color: #777;
     margin-bottom: 10px;
 }
 
-/* Buttons */
+.job-item p {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Apply Now Button */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -75,7 +62,6 @@ p {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    margin-top: 20px;
     transition: background-color 0.3s;
 }
 
@@ -83,20 +69,10 @@ p {
     background-color: #0056b3;
 }
 
-/* View Jobs Button Styling */
-.view-jobs-btn {
-    background-color: #28a745;
-    margin-top: 10px;
-}
-
-.view-jobs-btn:hover {
-    background-color: #218838;
-}
-
-/* Log Out Button Styling */
+/* Log Out Button */
 a.btn {
-    margin-top: 20px;
     background-color: #dc3545;
+    margin-top: 20px;
 }
 
 a.btn:hover {
@@ -105,7 +81,7 @@ a.btn:hover {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .profile-container {
+    .container {
         width: 90%;
         padding: 20px;
     }
@@ -114,15 +90,15 @@ a.btn:hover {
         font-size: 2rem;
     }
 
-    h2 {
+    .job-item {
+        padding: 10px;
+    }
+
+    .job-item h3 {
         font-size: 1.5rem;
     }
 
-    p {
+    .job-item p {
         font-size: 1rem;
-    }
-
-    .jobs li {
-        padding: 10px;
     }
 }
