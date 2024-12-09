@@ -35,6 +35,8 @@ class Application(db.Model):
     job_id = db.Column(db.Integer, db.ForeignKey('job.id'), nullable=False)
     applicant_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     cover_letter = db.Column(db.Text)
+    job = db.relationship('Job', backref='applications')  # This ensures you can access jobs from applications
+    applicant = db.relationship('User', backref='applications')  # This ensures you can access applications from users
 app.app_context().push()
 db.create_all()
 # ----------------- Login Manager -----------------
@@ -157,7 +159,7 @@ def apply(job_id):
         db.session.add(application)
         db.session.commit()
         flash('Application submitted successfully!')
-        return redirect(url_for('jobs'))
+        return redirect(url_for('job_seeker_profile'))
     
     return render_template('application.html', job=job)
 @app.route('/recruiter_profile')
@@ -183,15 +185,16 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('recruiter_profile'))
 
+
 @app.route('/job_seeker_profile')
 @login_required
 def job_seeker_profile():
     if not current_user.is_recruiter:
-        return render_template('job_seeker_profile.html')
+        applications = current_user.applications  # Get all applications for the current user
+        return render_template('job_seeker_profile.html', current_user=current_user, applications=applications)
     else:
         flash('You need to be a job seeker to view this page.')
         return redirect(url_for('home'))
-
 
 # ----------------- Database Setup -----------------
 
