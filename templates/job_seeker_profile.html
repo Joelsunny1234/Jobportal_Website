@@ -16,18 +16,19 @@
             <p>Account Type: Job Seeker</p>
         </div>
 
-        <!-- List of job applications -->
-        <div class="applications">
-            <h2>Jobs You've Applied For</h2>
+        <!-- List of all available jobs -->
+        <div class="jobs">
+            <h2>Available Jobs</h2>
             <ul>
-                {% for application in current_user.applications %}
+                {% for job in jobs %}
                     <li>
-                        <h3>{{ application.job.title }}</h3>
-                        <p>{{ application.cover_letter }}</p>
-                        <p>Status: {{ application.status }}</p> <!-- You can add status like "Pending", "Accepted", etc. -->
+                        <h3>{{ job.title }}</h3>
+                        <p>{{ job.description }}</p>
+                        <!-- Apply Button -->
+                        <a href="{{ url_for('apply', job_id=job.id) }}" class="btn apply-btn">Apply</a>
                     </li>
                 {% else %}
-                    <p>You haven't applied for any jobs yet.</p>
+                    <p>No jobs available at the moment.</p>
                 {% endfor %}
             </ul>
         </div>

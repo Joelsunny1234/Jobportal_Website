@@ -159,7 +159,7 @@ def apply(job_id):
         flash('Application submitted successfully!')
         return redirect(url_for('jobs'))
     
-    return render_template('apply.html', job=job)
+    return render_template('job_seeker_jobs.html', job=job)
 @app.route('/recruiter_profile')
 @login_required
 def recruiter_profile():
@@ -168,7 +168,12 @@ def recruiter_profile():
     else:
         flash('You need to be a recruiter to view this page.')
         return redirect(url_for('home'))
-    
+
+@app.route('/display')
+@login_required
+def display():
+    jobs=Job.query.all()
+    return render_template('job_seeker_job.html',jobs=jobs)
 @app.route('/delete/<int:id>')
 @login_required
 def delete(id):
