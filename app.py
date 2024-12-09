@@ -21,7 +21,7 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(100), nullable=False)
     is_recruiter = db.Column(db.Boolean, default=False)
     jobs = db.relationship('Job', backref='recruiter', lazy=True)
-    
+
 class Job(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
@@ -104,6 +104,20 @@ def logout():
     flash('Logged out successfully!')
     return redirect(url_for('login'))
 
+@app.route('/edit/<int:id>',methods=['POST','GET'])
+@login_required
+def edit(id):
+    job = Job.query.get(id)
+    if request.method=='POST':
+        job.title=request.form['title']
+        job.description=request.form['description']
+        db.session.commit()
+        return redirect(url_for('recruiter_profile',))
+    
+    return render_template("recruiter_post.html", job=job)
+
+
+
 @app.route('/jobs', methods=['GET', 'POST'])
 @login_required
 def jobs():
@@ -154,6 +168,14 @@ def recruiter_profile():
     else:
         flash('You need to be a recruiter to view this page.')
         return redirect(url_for('home'))
+    
+@app.route('/delete/<int:id>')
+@login_required
+def delete(id):
+    job=Job.query.get(id)
+    db.session.delete(job)
+    db.session.commit()
+    return redirect(url_for('recruiter_profile'))
 
 @app.route('/job_seeker_profile')
 @login_required

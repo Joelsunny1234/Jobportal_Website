@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post a Job</title>
+    <title>Post or Edit Job</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/recruiter_post.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Post a New Job</h1>
-        <form method="POST" action="{{ url_for('jobs') }}">
-            <!-- Job Title -->
+        <h1>{{ "Edit Job" if job else "Post a New Job" }}</h1>
+        <form method="POST">
             <div class="inputbox">
                 <label for="title">Job Title:</label>
-                <input type="text" name="title" id="title" required placeholder="Enter job title">
+                <input type="text" id="title" name="title" value="{{ job.title if job else '' }}" required>
             </div>
-
-            <!-- Job Description -->
             <div class="inputbox">
                 <label for="description">Job Description:</label>
-                <textarea name="description" id="description" rows="4" required placeholder="Enter job description"></textarea>
+                <textarea id="description" name="description" rows="5" required>{{ job.description if job else '' }}</textarea>
             </div>
-
-            <!-- Submit Button -->
-            <input type="submit" value="Post Job" class="btn">
+            <input type="submit" value="{{ 'Save Changes' if job else 'Post Job' }}">
         </form>
-
-    
     </div>
 </body>
 </html>
