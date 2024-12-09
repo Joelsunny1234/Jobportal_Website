@@ -20,11 +20,14 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
     is_recruiter = db.Column(db.Boolean, default=False)
-
+    jobs = db.relationship('Job', backref='recruiter', lazy=True)
+    
 class Job(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.Text, nullable=False)
+    recruiter_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
     recruiter_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 class Application(db.Model):
@@ -112,8 +115,7 @@ def jobs():
             db.session.add(new_job)
             db.session.commit()
             flash('Job posted successfully!')
-            return redirect(url_for('jobs'))  # After posting, redirect to the same jobs page to show the updated job list
-        
+            return redirect(url_for('recruiter_profile'))          
         # If GET request, show the job posting form
         return render_template('recruiter_post.html')
 
@@ -148,7 +150,7 @@ def apply(job_id):
 @login_required
 def recruiter_profile():
     if current_user.is_recruiter:
-        return render_template('recruiter_profile.html')
+        return render_template('recruiter_profile.html',current_user=current_user)
     else:
         flash('You need to be a recruiter to view this page.')
         return redirect(url_for('home'))
