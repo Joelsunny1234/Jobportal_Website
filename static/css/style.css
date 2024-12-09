@@ -22,84 +22,9 @@ body
     background: #00024C;
     border-radius: 17px;
     overflow: hidden;
-    /* left: 55px;
-    top: 5px; */
+    
 }
-/* .box::before{
-    content:'';
-    position:absolute;
-    top: -50%;
-    left:-50%;
-    width:380px;
-    height: 370px;
-    background: linear-gradient(0deg,transparent,transparent
-    ,#45f3ff,#45f3ff,#45f3ff);
-    z-index:1;
-    animation:animate 6s linear infinite;
-    transform-origin: bottom right;
 
- 
-}
-.box::after{
-    content:'';
-    position:absolute;
-    top: -50%;
-    left:-50%;
-    width:380px;
-    height: 370px;
-    background: linear-gradient(0deg,transparent,transparent
-    ,#45f3ff,#45f3ff,#45f3ff);
-    z-index:1;
-    animation:animate 6s linear infinite;
-    transform-origin: bottom right;
-    animation-delay:-3s;
-} */
-/* .borderLine
-{
-    position:absolute;
-    top:0;
-    inset:0;
-
-}
-.borderLine::before{
-    content:'';
-    position:absolute;
-    top: -50%;
-    left:-50%;
-    width:380px;
-    height: 370px;
-    background: linear-gradient(0deg,transparent,transparent
-    ,#e8e1e5,#e8e1e5,#e8e1e5);
-    z-index:1;
-    animation:animate 6s linear infinite;
-    transform-origin: bottom right;
-    animation-delay:-1.5s;
-}
-.borderLine::after{
-    content:'';
-    position:absolute;
-    top: -50%;
-    left:-50%;
-    width:380px;
-    height: 370px;
-    background: linear-gradient(0deg,transparent,transparent
-    ,#e8e1e5,#e8e1e5,#e8e1e5);
-    z-index:1;
-    animation:animate 6s linear infinite;
-    transform-origin: bottom right;
-    animation-delay:1.5s;
-}
-@keyframes animate
-{
-    0%
-    {
-        transform: rotate(0deg);
-    }
-    100%
-    {
-        transform: rotate(360deg);
-    }
-} */
 .box form {
     position: absolute;
     background: #ffffff;
