@@ -5,8 +5,8 @@ body, html {
     padding: 0;
     background-color: #f9f9f9;
     color: #212529;
-    overflow: hidden; /* Disable scrolling */
-    height: 100%; /* Fill the viewport */
+    overflow: hidden; 
+    height: 100%; 
 }
 
 h1, p {
@@ -37,7 +37,7 @@ a:hover {
 
 /* Navbar */
 nav {
-    height: 80px; /* Fixed height */
+    height: 80px; 
     background-color: #fff;
     border-bottom: 1px solid #eaeaea;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -57,15 +57,15 @@ nav {
 .row {
     margin: 0;
     padding: 0 20px;
-    height: calc(100vh - 60px); /* Fill the remaining height */
+    height: calc(100vh - 60px); 
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: space-between; /* Space between columns */
+    align-items: center; 
+    justify-content: space-between; 
 }
 
 .col-md-6 img {
-    max-width: 60%; /* Ensure it fits container */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 60%; 
+    height: auto; 
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: -50px;
@@ -89,7 +89,7 @@ nav {
 
     .row {
         flex-direction: column;
-        height: calc(100vh - 80px); /* Adjust for smaller screens */
+        height: calc(100vh - 80px); 
     }
 
     .logo img {
