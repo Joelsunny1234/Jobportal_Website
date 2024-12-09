@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for {{ job.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Apply for {{ job.title }}</h1>
+        
+        <!-- Display job details -->
+        <div class="job-details">
+            <h3>Job Description</h3>
+            <p>{{ job.description }}</p>
+        </div>
+
+        <!-- Application Form -->
+        <form method="POST">
+            <div class="form-group">
+                <label for="cover_letter">Cover Letter</label>
+                <textarea id="cover_letter" name="cover_letter" rows="5" placeholder="Write your cover letter here..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Application</button>
+        </form>
+
+        <!-- Back to Jobs Button -->
+        <a href="{{ url_for('jobs') }}" class="btn">Back to Available Jobs</a>
+    </div>
+</body>
+</html>

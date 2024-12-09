@@ -159,7 +159,7 @@ def apply(job_id):
         flash('Application submitted successfully!')
         return redirect(url_for('jobs'))
     
-    return render_template('job_seeker_jobs.html', job=job)
+    return render_template('application.html', job=job)
 @app.route('/recruiter_profile')
 @login_required
 def recruiter_profile():
